@@ -1,0 +1,15 @@
+{% extends "base_logueado_bootstrap.html" %}
+{% block extrastyle %}
+<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}css/identificacion.css' />
+{% endblock %}
+{% block content %}
+{% include "main-identificacion.html" %}
+{% endblock %}
+
+{% block extrafooter %}
+<script type='text/javascript' src='{{ STATIC_URL }}js/moment.min.js'></script>
+<script type="text/javascript">
+window.localStorage.setItem("isModal", false);
+</script>
+{% include "footer-identificacion.html" %}
+{% endblock %}

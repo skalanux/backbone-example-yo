@@ -1,0 +1,211 @@
+<!-- Esto en realidad es un template no va dentro de id sino en un tag script type template -->
+<script type="text/template" class="identificacion-grid">
+  <div class="identificacion-wrapper row-fluid">
+  <div class="search_wrapper span8">
+    <div id="search_container_documento"></div>
+    <div id="search_container_fecha_nac"></div>
+    <div id="search_container_apellido"></div>
+    <div id="search_container_nombres"></div>
+    <div id="search_container_otros_datos"></div>
+    <div id="search_container_main_hc"></div>
+    <div>
+      <a class="btn" id="agregar-persona" href="#">Nuevo</a>
+      <a class="btn" id="editar-persona" href="#">Editar</a>
+      <a class="btn" id="buscar-persona" href="#">Buscar</a>
+      <a class="btn" id="limpiar-persona" href="#">Limpiar</a>
+    </div>
+    <br>
+  </div>
+  <div id="datos_del_financiador" class="span4">
+    <h4 class="nofloat" >Datos</h4>
+    <div id="persona_elegida_tel" class="datos_row"><span class="label embiggens12" >Teléfonos</span><span class="data"></span></div>
+    <div id="persona_elegida_edad" class="datos_row"><span class="label embiggens12">Edad</span><span class="data"></span></div>
+    <div id="obra_social" class="datos_row"><span class="label embiggens12">Obra social</span><span class="data"></span></div>
+    <div id="obra_social_padron" class="datos_row"><span class="label embiggens12">Obra social padrón</span><span class="data"></span></div>
+    <div id="validacion_obra_social" class="datos_row"><span class="label embiggens12">Última validación</span><span class="data"></span></div>
+    <div id="numero_historia_clinica" class="datos_row"><span class="label embiggens12">Número historia clinica</span><span class="data"></span></div>
+
+    <a id="cambiar_financiador_btn" class="btn cambiar_financiador" href="#">Cambiar OS</a>
+    <a id="validar_financiador_btn" class="btn validar_financiador" href="#">Validar OS</a>
+    <a id="eliminar_financiador_btn" class="btn validar_financiador" href="#">Eliminar OS</a>
+    <a id="carga_historia_clinica_btn" class="btn cargar_historia_clinica" href="#">Cargar HC</a>
+
+    <input type="hidden" id="obrasocial-id" value=0 />
+    <input type="hidden" id="siglaobsoc" value="" />
+  </div>
+</div>
+  <div class="row-fluid">
+    <div class="result_wrapper span12">
+      <div id="result_container"></div>
+      <div id="paginator-footer"></div>
+    </div>
+  </div>
+</script>
+
+<script type="text/template" class="partido-grid">
+  <div><a class="btn partido_volver" id="partido_volver">&lt;&lt; volver</a></div>
+  <br>
+  <div id="search-container-nombre-partido"></div>
+  <div id="result-container-partido"></div>
+  <div id="paginator-footer-partido"></div>
+</script>
+
+<script type="text/template" class="localidad-grid">
+  <div><a class="btn localidad_volver" id="localidad_volver">&lt;&lt; volver</a></div>
+  <br>
+  <div id="search-container-nombre-localidad"></div>
+  <br>
+  <div id="result-container-localidad"></div>
+  <div id="paginator-footer-localidad"></div>
+</script>
+
+<script type="text/template" class="financiador-grid">
+  <div><a class="btn financiador_volver" id="financiador_volver">&lt;&lt; volver</a></div>
+  <br>
+  <div id="search-container-sigla"></div>
+  <div id="search-container-nombre"></div>
+  <div id="result-container-financiador"></div>
+  <div id="paginator-footer-financiador"></div>
+</script>
+
+
+
+<script type="text/template" class="financiador-datos">
+</script>
+
+<script type="text/template" class="identificacion-persona-alta-form-buttons">
+  <form>
+    <ul id="form-messages" class="messagelist"></ul>
+    <div class="row-fluid">
+      <div class="span4">
+
+        <div data-fields="tipo_documento,nro_documento,apellido,nombres,fecha_nac,sexo,estado_civil"></div>
+      </div>
+      <div class="span4">
+        <div data-fields="otros_datos,telefonos,dom_calle,dom_puerta,dom_piso,dom_depto,dom_otros"></div>
+        </div>
+      <div class="span4">
+        <div data-fields="nacionalidad,pais,provincia,localidad,partido,dom_cp"></div>
+        <div class="row-fluid">
+
+            <div class="span5">
+                <a class="btn btn-responsables" id="btn-responsables">Responsables</a>
+            </div>
+            <div class="span5">
+                <a class="btn btn-juzgados" id="btn-juzgados">Juzgados</a>
+            </div>
+            <div class="offset2">
+            </div>
+
+        </div>
+      </div>
+     <div class="offset1">
+      </div>
+
+    </div>
+    </form>
+
+  </script>
+<script type="text/template" class="identificacion-persona-alta-responsable">
+  <form>
+    <ul id="form-messages-responsable" class="messagelist"></ul>
+    <br>
+    <div class="row-fluid">
+      <div class="span4">
+        <div data-fields="tipo_documento,nro_documento,apellido,nombres,vinculo"></div>
+      </div>
+      <div class="span4">
+        <div data-fields="fecha_nac,sexo,domicilio,telefono"></div>
+      </div>
+      <div class="span4">
+      </div>
+
+    </div>
+    <hr>
+    <div class="row-fluid">
+      <div class="span4">
+            <a class="btn responsable_volver" id="responsable_volver">&lt;&lt; volver</a>
+      </div>
+      <div class="span4">
+             <a class="btn btn-warning save" id="responsable-agregar" style="valign:bottom">Agregar</a>
+      </div>
+
+    </div>
+
+
+
+  <div id="result-container-responsable"></div>
+    </form>
+
+</script>
+
+<script type="text/template" class="identificacion-persona-alta-juzgado">
+  <form>
+    <ul id="form-messages-juzgado" class="messagelist"></ul>
+    <div><a class="btn juzgado_volver" id="juzgado_volver">&lt;&lt; volver</a></div>
+    <br>
+    <div class="row-fluid">
+      <div class="span6">
+
+      <select id="juzgados-selector">
+            <% _(juzgados).each(function(juzgado) { %>
+                <option value="<%= juzgado.url %>"><%= juzgado.nombre %></option>
+            <% }); %>
+        </select>
+
+      </div>
+      <div class="span6">
+        <div ><a class="btn btn-warning" href="#" id="juzgado-agregar" >Agregar</a></div>
+      </div>
+    </div>
+
+
+  <div id="result-container-juzgado"></div>
+    </form>
+
+</script>
+
+<script type="text/template" class="identificacion-serie-historia-clinica">
+  <div><a class="btn volver">&lt;&lt; Volver</a></div>
+  <br>
+  <div class="row-fluid">
+    <h2 class="span12">Asignación de números historia clínica</h2>
+    <div class="row-fluid">
+      <h3 class="span12"><%= persona.get('nombres') %> <%= persona.get('apellido') %> - 
+      <%= persona.get('tipo_documento') %>: <%= persona.get('nro_documento') %></h3>
+    </div>
+  </div>
+  <iframe id="iframe-print"  style='display:none'>
+  </iframe>
+  <table style="text-transform: capitalize" class="table">
+    <tr>
+      <th style="border-top: 1px solid rgb(238,238,238); color: #0088CC;" >Tipo</th>
+      <th style="border-top: 1px solid rgb(238,238,238); color: #0088CC;" >Código</th>
+      <th style="border-top: 1px solid rgb(238,238,238); color: #0088CC;" >Operaciones</th>
+    </tr>
+    <% _.each(models , function(model, index) { %>
+    <tr>
+      <td style="vertical-align: middle"><%= model.get('seriehistoriaclinica__nombre') %></td>
+      <td class="codigo-histclin" data-nro-fila="<%- index %>" style="vertical-align: middle" ><%= model.get('histclin__codigo')||'-' %></td>
+      <td style="border-top: 1px solid rgb(238,238,238);" class="algoritmos span8" data-nro-fila="<%- index %>"></td>
+    <% }); %>
+  </table>
+
+</script>
+
+<script type='text/javascript' src='{{ STATIC_URL }}js/jquery.leanModal.min.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/jquery.maskedinput.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/identificacion-models.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/identificacion-helpers.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/identificacion-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/identificacion-persona-view.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/financiador-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/localidades-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/partidos-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/responsables-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/juzgados-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/historia-clinica-views.js'></script>
+<script type='text/javascript' src='{{ STATIC_URL }}js/identificacion-router.js'></script>
+<script>
+
+</script>
